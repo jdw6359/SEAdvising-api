@@ -7,6 +7,7 @@ gem 'rails-api'
 gem 'spring', :group => :development
 gem 'sqlite3'
 
+gem 'bcrypt', '~> 3.1.7'
 
 #new gems
 gem 'pry'
