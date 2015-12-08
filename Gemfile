@@ -8,6 +8,7 @@ gem 'spring', :group => :development
 gem 'sqlite3'
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
 
 #new gems
 gem 'pry'
