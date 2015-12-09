@@ -1,14 +1,21 @@
 class User < ActiveRecord::Base
 	
-	before_create :generate_authentication_token!
-
 	has_secure_password
 
-	validates :authentication_token, uniqueness: true
+	validates_uniqueness_of :email
 
-	def generate_authentication_token!
-		begin
-			self.authentication_token = Devise.friendly_token
-		end while self.class.exists?(authentication_token: authentication_token)
+	#Override the json representation of User
+	def to_json(options={})
+		options[:except] ||= [:password]
+		super(options)
 	end
+
+	def generate_auth_token
+
+		binding.pry
+
+		payload = {user_id: self.id}
+		AuthToken.encode(payload)
+	end
+
 end
