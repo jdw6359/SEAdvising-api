@@ -4,7 +4,7 @@ class CreateStudent < ActiveRecord::Migration
     	t.string :email
     	t.string :first_name
     	t.string :last_name
-    	t.integer :year_level
+    	t.integer :year_level, default: 1
     	t.boolean :in_program, default: true
 
     	t.timestamps
