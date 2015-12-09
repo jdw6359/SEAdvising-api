@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209215647) do
+ActiveRecord::Schema.define(version: 20151209224725) do
 
   create_table "application_domains", force: :cascade do |t|
     t.integer  "student_id"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20151209215647) do
     t.boolean  "class_2_complete", default: false
     t.boolean  "class_3_complete", default: false
     t.boolean  "fulfilled",        default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.integer  "advisor_id"
+    t.integer  "student_id"
+    t.datetime "meeting_time"
+    t.boolean  "attended",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

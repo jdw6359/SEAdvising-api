@@ -2,6 +2,7 @@ class Student < ActiveRecord::Base
 	has_one :program_change
 	has_one :application_domain
 	has_one :senior_project
+	has_many :meetings
 
 	validates_presence_of :email, :first_name, :last_name
 	validates_uniqueness_of :email
