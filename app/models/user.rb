@@ -10,10 +10,11 @@ class User < ActiveRecord::Base
 		super(options)
 	end
 
+	def generate_password_reset_token!
+		update_attribute(:password_reset_token, SecureRandom.urlsafe_base64(48))
+	end
+
 	def generate_auth_token
-
-		binding.pry
-
 		payload = {user_id: self.id}
 		AuthToken.encode(payload)
 	end

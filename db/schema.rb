@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208140908) do
+ActiveRecord::Schema.define(version: 20151209184225) do
 
   create_table "users", force: :cascade do |t|
     t.string "type"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20151208140908) do
     t.string "last_name"
     t.string "email"
     t.string "password_digest"
+    t.string "password_reset_token"
   end
 
 end
