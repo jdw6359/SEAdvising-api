@@ -11,6 +11,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 
 #new gems
+gem 'rack-cors', :require => 'rack/cors'
 gem 'pry'
 gem 'mysql2', '~> 0.3.18'
 gem 'puma'
