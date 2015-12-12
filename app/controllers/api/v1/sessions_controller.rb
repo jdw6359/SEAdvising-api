@@ -6,7 +6,8 @@ class Api::V1::SessionsController < ApplicationController
 		@user = User.find_by(email: params[:email])
 		if @user && @user.authenticate(params[:password])
 			#create a serialized JWT and provide to client
-			render json: {user: @user, 
+			render json: {user: @user,
+				user_role: @user.type, 
 				auth_token: @user.generate_auth_token}
 		else
 			render json: {errors: "Invalid Email or Password"}, status: 422

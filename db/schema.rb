@@ -11,45 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209224725) do
+ActiveRecord::Schema.define(version: 20151211222553) do
 
-  create_table "application_domains", force: :cascade do |t|
+  create_table "change_program_out", force: :cascade do |t|
     t.integer  "student_id"
-    t.string   "name"
-    t.boolean  "custom",           default: false
-    t.datetime "approval_date"
-    t.string   "class_1"
-    t.string   "class_2"
-    t.string   "class_3"
-    t.boolean  "class_1_complete", default: false
-    t.boolean  "class_2_complete", default: false
-    t.boolean  "class_3_complete", default: false
-    t.boolean  "fulfilled",        default: false
+    t.string   "code"
+    t.string   "new_plan"
+    t.string   "effective_term"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "meetings", force: :cascade do |t|
-    t.integer  "advisor_id"
+  create_table "co_ops", force: :cascade do |t|
     t.integer  "student_id"
-    t.datetime "meeting_time"
-    t.boolean  "attended",     default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "program_changes", force: :cascade do |t|
-    t.integer  "student_id"
-    t.string   "previous_program"
-    t.datetime "application_date"
-    t.boolean  "essay_complete",   default: false
-    t.boolean  "accepted",         default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "senior_projects", force: :cascade do |t|
-    t.integer  "student_id"
+    t.string   "term"
+    t.integer  "weeks"
+    t.boolean  "exception"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,8 +36,14 @@ ActiveRecord::Schema.define(version: 20151209224725) do
     t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "year_level", default: 1
-    t.boolean  "in_program", default: true
+    t.string   "advisor"
+    t.string   "student_type",        default: "FR"
+    t.string   "status",              default: "Active"
+    t.string   "com_sub_plan",        default: "t"
+    t.string   "first_enrolled_term"
+    t.string   "expected_graduation"
+    t.datetime "last_audit"
+    t.integer  "year_level",          default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end

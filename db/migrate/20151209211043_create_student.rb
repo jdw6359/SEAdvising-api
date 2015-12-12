@@ -4,9 +4,14 @@ class CreateStudent < ActiveRecord::Migration
     	t.string :email
     	t.string :first_name
     	t.string :last_name
+        t.string :advisor
+        t.string :student_type, default: "FR"
+        t.string :status, default: "Active"
+        t.string :com_sub_plan, default: true
+        t.string :first_enrolled_term
+        t.string :expected_graduation
+        t.datetime :last_audit
     	t.integer :year_level, default: 1
-    	t.boolean :in_program, default: true
-
     	t.timestamps
     end
   end
