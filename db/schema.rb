@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20151211222553) do
     t.datetime "updated_at"
   end
 
-  create_table "co_ops", force: :cascade do |t|
+  create_table "coops", force: :cascade do |t|
     t.integer  "student_id"
     t.string   "term"
     t.integer  "weeks"

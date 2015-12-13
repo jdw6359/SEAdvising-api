@@ -1,4 +1,4 @@
-1000.times {
+50.times {
 	first_name = Faker::Name.first_name
 	Student.create(
 		first_name: first_name,
