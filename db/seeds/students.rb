@@ -1,4 +1,8 @@
-Student.create(first_name: "Josh", last_name: "Woodward",
-	email: "josh@josh.com")
-Student.create(first_name: "Kurt", last_name: "Poquette",
-	email: "kurt@kurt.com")
+100.times {
+	first_name = Faker::Name.first_name
+	Student.create(
+		first_name: first_name,
+		last_name: Faker::Name.last_name,
+		email: first_name + "@rit.edu"
+	)
+}
