@@ -5,9 +5,10 @@ class User < ActiveRecord::Base
 	validates_presence_of :first_name, :last_name, :email, :password
 	validates_uniqueness_of :email
 
+	#TODO: Investigate why password digest is still being returned as JSON
 	#Override the json representation of User
 	def to_json(options={})
-		options[:except] ||= [:password]
+		options[:except] ||= [:password_digest]
 		super(options)
 	end
 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
       # entity-based resources
       resources :students, only: [:index, :show]
+      resources :advisors, only: [:index]
     end
   end
 end
