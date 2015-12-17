@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :password_resets, only: [:create, :show, :update]
 
       # entity-based resources
-      resources :students, only: [:index, :show]
+      resources :students, only: [:index, :show, :create]
       resources :advisors, only: [:index]
     end
   end

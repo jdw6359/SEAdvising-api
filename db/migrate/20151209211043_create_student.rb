@@ -1,10 +1,11 @@
 class CreateStudent < ActiveRecord::Migration
   def change
     create_table :students do |t|
-    	t.string :email
+    	t.integer :advisor_id
+        t.string :email
     	t.string :first_name
+        t.string :middle_name
     	t.string :last_name
-        t.string :advisor
         t.string :student_type, default: "FR"
         t.string :status, default: "Active"
         t.string :com_sub_plan, default: true
