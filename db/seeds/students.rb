@@ -1,5 +1,5 @@
 advisor_ids = Advisor.all.pluck(:id)
-50.times {
+5.times {
 	first_name = Faker::Name.first_name
 	Student.create(
 		advisor_id: advisor_ids.sample,

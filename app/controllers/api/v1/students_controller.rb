@@ -2,7 +2,7 @@ class Api::V1::StudentsController < ApplicationController
 
 	def index
 		@students = Student.all
-		render json: @students
+		render json: @students, include: [:advisor]
 	end
 
 	def show

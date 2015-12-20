@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       # middleware, ancillary functionality
       resources :sessions, only: [:create, :destroy]
+      post 'sessions/restore' => 'sessions#restore'
+
       resources :password_resets, only: [:create, :show, :update]
 
       # entity-based resources
