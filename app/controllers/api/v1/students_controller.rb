@@ -1,14 +1,20 @@
 class Api::V1::StudentsController < ApplicationController
 
+	#TODO: find out how to globalize the exclusion of user.password_digest
+		# see also advisors_controller
+	#TODO: find out how to hlobalize the inclusionof advisor within student
 	def index
 		@students = Student.includes(:advisor).all
 		render json: @students, include: [:advisor]
 	end
 
+	#TODO: find out how to globalize the exclusion of user.password_digest	
+		# see also advisors_controller
+	#TODO: find out how to globalize the inclusion of advisor within student
 	def show
-		@student = Student.find(params[:id])
+		@student = Student.includes(:advisor).find(params[:id])
 		if @student
-			render json: @student
+			render json: @student, include: [:advisor]
 		else
 			render json: {errors: "Student Not Found"}, status: 422
 		end
