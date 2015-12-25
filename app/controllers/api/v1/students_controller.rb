@@ -33,7 +33,8 @@ class Api::V1::StudentsController < ApplicationController
 	private
 	def student_params
 		params.require(:student).permit(:first_name, :middle_name, :last_name,
-			:email, :advisor_id)
+			:email, :advisor_id, :first_enrolled_term, :expected_graduation,
+			:status, :student_type, :com_sub_plan)
 	end
 	
 end

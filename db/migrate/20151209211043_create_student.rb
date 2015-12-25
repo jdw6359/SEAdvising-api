@@ -12,7 +12,6 @@ class CreateStudent < ActiveRecord::Migration
         t.string :first_enrolled_term
         t.string :expected_graduation
         t.datetime :last_audit
-    	t.integer :year_level, default: 1
     	t.timestamps
     end
   end

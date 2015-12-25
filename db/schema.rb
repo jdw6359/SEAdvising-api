@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20151211222553) do
     t.string   "first_enrolled_term"
     t.string   "expected_graduation"
     t.datetime "last_audit"
-    t.integer  "year_level",          default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
