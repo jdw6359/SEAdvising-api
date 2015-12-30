@@ -25,9 +25,7 @@ ActiveRecord::Schema.define(version: 20151211222553) do
 
   create_table "coops", force: :cascade do |t|
     t.integer  "student_id"
-    t.string   "term"
-    t.integer  "weeks"
-    t.boolean  "exception"
+    t.string   "company_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

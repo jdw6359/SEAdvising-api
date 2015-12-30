@@ -8,8 +8,11 @@ Rails.application.routes.draw do
       resources :password_resets, only: [:create, :show, :update]
 
       # entity-based resources
-      resources :students, only: [:index, :show, :create]
       resources :advisors, only: [:index]
+      resources :students, only: [:index, :show, :create] do
+        resources :coops, only: [:create]
+      end
+
     end
   end
 end

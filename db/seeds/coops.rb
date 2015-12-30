@@ -1,5 +1,6 @@
-student = Student.find(1)
+student_ids = Student.all.pluck(:id)
 
-Coop.create(student_id: student.id, term: "2151", weeks: 11, exception: false)
-Coop.create(student_id: student.id, term: "2152", weeks: 14, exception: false)
-Coop.create(student_id: student.id, term: "2158", weeks: 8, exception: true)
+20.times do
+  student_id = student_ids.sample
+  Coop.create(student_id: student_id, company_name: Faker::Company.name)
+end

@@ -12,9 +12,9 @@ class Api::V1::StudentsController < ApplicationController
 		# see also advisors_controller
 	#TODO: find out how to globalize the inclusion of advisor within student
 	def show
-		@student = Student.includes(:advisor).find(params[:id])
+		@student = Student.includes(student_associations).find(params[:id])
 		if @student
-			render json: @student, include: [:advisor]
+			render json: @student, include: student_associations
 		else
 			render json: {errors: "Student Not Found"}, status: 422
 		end
@@ -22,7 +22,6 @@ class Api::V1::StudentsController < ApplicationController
 
 	def create
 		@student = Student.new(student_params)
-
 		if @student.save
 			render json: @student, status: :created
 		else
@@ -36,5 +35,9 @@ class Api::V1::StudentsController < ApplicationController
 			:email, :advisor_id, :first_enrolled_term, :expected_graduation,
 			:status, :student_type, :com_sub_plan)
 	end
-	
+
+	# define the related entities to be included in student lookup and json render 
+	def student_associations
+		[:advisor, :coops]
+	end
 end
