@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :students, only: [:index, :show, :create] do
         resources :coops, only: [:create]
       end
+      resources :coops, only: [:destroy]
 
     end
   end

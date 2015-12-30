@@ -2,7 +2,7 @@ class Api::V1::StudentsController < ApplicationController
 
 	#TODO: find out how to globalize the exclusion of user.password_digest
 		# see also advisors_controller
-	#TODO: find out how to hlobalize the inclusionof advisor within student
+	#TODO: find out how to globalize the inclusionof advisor within student
 	def index
 		@students = Student.includes(:advisor).all
 		render json: @students, include: [:advisor]
