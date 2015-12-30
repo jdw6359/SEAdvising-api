@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211222553) do
+ActiveRecord::Schema.define(version: 20151230194806) do
 
   create_table "change_program_out", force: :cascade do |t|
     t.integer  "student_id"
@@ -36,14 +36,16 @@ ActiveRecord::Schema.define(version: 20151211222553) do
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
-    t.string   "student_type",        default: "FR"
-    t.string   "status",              default: "Active"
-    t.string   "com_sub_plan",        default: "t"
+    t.string   "student_type",          default: "FR"
+    t.string   "status",                default: "Active"
+    t.string   "com_sub_plan",          default: "t"
     t.string   "first_enrolled_term"
     t.string   "expected_graduation"
     t.datetime "last_audit"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "cop_in",                default: false
+    t.string   "cop_in_effective_term"
   end
 
   create_table "users", force: :cascade do |t|

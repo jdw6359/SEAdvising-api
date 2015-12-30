@@ -15,7 +15,10 @@ first_enrolled_terms = [1113, 1115, 1118, 1123, 1125, 1128]
 	status = student_statuses.sample
 	status = 'Active' unless rand(4)==0
 
+	cop_in = boolean_values.sample
+
 	first_enrolled_term = first_enrolled_terms.sample
+	cop_in_effective_term = first_enrolled_term + 20 unless !cop_in
 	expected_graduation = first_enrolled_term + 40
 
 	Student.create(
@@ -29,6 +32,8 @@ first_enrolled_terms = [1113, 1115, 1118, 1123, 1125, 1128]
 		status: status, 
 		com_sub_plan: boolean_values.sample,
 		first_enrolled_term: first_enrolled_term,
-		expected_graduation: expected_graduation
+		expected_graduation: expected_graduation,
+		cop_in: cop_in,
+		cop_in_effective_term: cop_in_effective_term 
 	)
 }
