@@ -3,6 +3,7 @@ class CreateCoop < ActiveRecord::Migration
     create_table :coops do |t|
     	t.integer :student_id
     	t.string :company_name
+    	
     	t.timestamps
     end
   end

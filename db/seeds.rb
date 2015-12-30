@@ -6,3 +6,4 @@ load 'db/seeds/students.rb'
 
 #coop dependent on students
 load 'db/seeds/coops.rb'
+load 'db/seeds/audits.rb'

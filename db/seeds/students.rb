@@ -27,7 +27,6 @@ first_enrolled_terms = [1113, 1115, 1118, 1123, 1125, 1128]
 		middle_name: Faker::Name.first_name,
 		last_name: Faker::Name.last_name,
 		email: email,
-		last_audit: Faker::Date.backward(365),
 		student_type: student_types.sample,
 		status: status, 
 		com_sub_plan: boolean_values.sample,

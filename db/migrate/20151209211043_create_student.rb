@@ -11,7 +11,7 @@ class CreateStudent < ActiveRecord::Migration
         t.string :com_sub_plan, default: true
         t.string :first_enrolled_term
         t.string :expected_graduation
-        t.datetime :last_audit
+                
     	t.timestamps
     end
   end

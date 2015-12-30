@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :advisors, only: [:index]
       resources :students, only: [:index, :show, :create] do
         resources :coops, only: [:create]
+        resources :audits, only: [:create]
       end
       resources :coops, only: [:destroy]
 
