@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
 	belongs_to :advisor
+	has_one :cop_out
 	has_many :coops
 	has_many :audits
 

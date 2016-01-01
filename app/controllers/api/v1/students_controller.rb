@@ -38,6 +38,6 @@ class Api::V1::StudentsController < ApplicationController
 
 	# define the related entities to be included in student lookup and json render 
 	def student_associations
-		[:advisor, :coops, :audits]
+		[:advisor, :cop_out, :coops, :audits]
 	end
 end
