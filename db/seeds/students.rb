@@ -7,6 +7,7 @@ first_enrolled_terms = [1113, 1115, 1118, 1123, 1125, 1128]
 
 10.times {
 	first_name = Faker::Name.first_name
+	middle_name = Faker::Name.first_name
 	last_name = Faker::Name.last_name
 	email = first_name[0] + last_name + "@rit.edu"
 
@@ -24,8 +25,8 @@ first_enrolled_terms = [1113, 1115, 1118, 1123, 1125, 1128]
 	Student.create(
 		advisor_id: advisor_ids.sample,
 		first_name: first_name,
-		middle_name: Faker::Name.first_name,
-		last_name: Faker::Name.last_name,
+		middle_name: middle_name,
+		last_name: last_name,
 		email: email,
 		student_type: student_types.sample,
 		status: status, 
