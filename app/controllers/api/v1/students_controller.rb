@@ -29,6 +29,17 @@ class Api::V1::StudentsController < ApplicationController
 		end
 	end
 
+	# incoming filter will be used to reduce @students based on matching names
+	def search
+		filter = params[:filter].downcase
+		@students = Student.all
+		
+		# non destructive selection - we want @students to
+		# remain cached / intact for subsequent requests
+		students = @students.select{|student| student.full_name.include?(filter)}
+		render json: students
+	end
+
 	private
 	def student_params
 		params.require(:student).permit(:first_name, :middle_name, :last_name,

@@ -9,11 +9,13 @@ Rails.application.routes.draw do
 
       # entity-based resources
       resources :advisors, only: [:index]
+      get 'students/search' => 'students#search'
       resources :students, only: [:index, :show, :create] do
         resources :coops, only: [:create]
         resources :audits, only: [:create]
         resources :cop_outs, only: [:create]
       end
+
       resources :coops, only: [:destroy]
     end
   end
