@@ -5,7 +5,7 @@ boolean_values = [true, false]
 
 first_enrolled_terms = [1113, 1115, 1118, 1123, 1125, 1128]
 
-10.times {
+50.times {
 	first_name = Faker::Name.first_name
 	middle_name = Faker::Name.first_name
 	last_name = Faker::Name.last_name
