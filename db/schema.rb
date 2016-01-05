@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231183216) do
+ActiveRecord::Schema.define(version: 20160105220235) do
 
   create_table "audits", force: :cascade do |t|
     t.integer  "student_id"
@@ -64,6 +64,14 @@ ActiveRecord::Schema.define(version: 20151231183216) do
     t.datetime "updated_at"
     t.boolean  "cop_in",                default: false
     t.string   "cop_in_effective_term"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string   "message"
+    t.integer  "loggable_id"
+    t.string   "loggable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
