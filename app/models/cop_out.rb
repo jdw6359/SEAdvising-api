@@ -3,9 +3,8 @@ class CopOut < ActiveRecord::Base
 
 	belongs_to :student
 
-	def message
-		"#{self.student.full_name} has applied for a change of program out, " \
-		"desiring acceptance into #{self.new_plan}, effective starting " \
-		"term: #{self.effective_term}"
+	def added_message
+		"An application for a change of program into #{self.new_plan} " \
+		"has been completed, taking effect term of: #{self.effective_term}"
 	end
 end

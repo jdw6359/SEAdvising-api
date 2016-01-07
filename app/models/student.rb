@@ -4,6 +4,8 @@ class Student < ActiveRecord::Base
 	has_many :coops
 	has_many :audits
 
+	has_many :transactions
+
 	validates_presence_of :email, :first_name, :last_name
 	validates_uniqueness_of :email
 

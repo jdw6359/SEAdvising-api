@@ -4,9 +4,8 @@ class Audit < ActiveRecord::Base
 	belongs_to :student
 	belongs_to :advisor
 
-	def message
-		"An audit was recorded on #{self.date_performed} for " \
-		"#{self.student.full_name} with the following comments: " \
-		"#{self.comment}"
+	def added_message
+		"An audit was recorded on #{self.date_performed} with " \
+		"the following comments: #{self.comment}"
 	end
 end
