@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160107015158) do
+ActiveRecord::Schema.define(version: 20160107184242) do
 
   create_table "audits", force: :cascade do |t|
     t.integer  "student_id"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20160107015158) do
     t.string   "action"
   end
 
+  add_index "transactions", ["created_at"], name: "index_transactions_on_created_at"
   add_index "transactions", ["loggable_id"], name: "index_transactions_on_loggable_id"
   add_index "transactions", ["student_id"], name: "index_transactions_on_student_id"
 
