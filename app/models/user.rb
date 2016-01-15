@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 	
 	has_secure_password
 
+	has_many :messages
+
 	validates_presence_of :first_name, :last_name, :email, :password
 	validates_uniqueness_of :email
 
@@ -20,5 +22,4 @@ class User < ActiveRecord::Base
 		payload = {user_id: self.id}
 		AuthToken.encode(payload)
 	end
-
 end

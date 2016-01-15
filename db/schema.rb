@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160107184242) do
+ActiveRecord::Schema.define(version: 20160107201513) do
 
   create_table "audits", force: :cascade do |t|
     t.integer  "student_id"
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 20160107184242) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "students", force: :cascade do |t|
     t.integer  "advisor_id"
