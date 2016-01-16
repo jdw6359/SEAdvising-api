@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :advisors, only: [:index]
       get 'students/search' => 'students#search'
       resources :students, only: [:index, :show, :create] do
+        resources :transactions, only: [:index]
         resources :coops, only: [:create]
         resources :audits, only: [:create]
         resources :cop_outs, only: [:create]
