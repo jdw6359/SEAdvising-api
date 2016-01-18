@@ -12,11 +12,19 @@ class Api::V1::StudentsController < ApplicationController
 		# see also advisors_controller
 	#TODO: find out how to globalize the inclusion of advisor within student
 	def show
-		@student = Student.includes(student_associations).find(params[:id])
-		if @student
-			render json: @student, include: student_associations
+
+		# Providing parameter :associations => true indicates that the associated
+		# objects determined in :student_associations should be included in the
+		# result set.
+
+		# delegates behavior to private class methods
+		
+		# TODO: find a better way to test truthy params[:associations]
+		# (the issue being that params[:associations] is coming in as a string)
+		if params[:associations].eql?("true")
+			render_student_with_associations
 		else
-			render json: {errors: "Student Not Found"}, status: 422
+			render_student
 		end
 	end
 
@@ -44,6 +52,24 @@ class Api::V1::StudentsController < ApplicationController
 	end
 
 	private
+	def render_student
+		@student = Student.find(params[:id])
+		if @student
+			render json: @student
+		else
+			render json: {errors: "Student Not Found"}, status: 422
+		end
+	end
+
+	def render_student_with_associations
+		@student = Student.includes(student_associations).find(params[:id])
+		if @student
+			render json: @student, include: student_associations
+		else
+			render json: {errors: "Student Not Found"}, status: 422
+		end
+	end
+
 	def student_params
 		params.require(:student).permit(:first_name, :middle_name, :last_name,
 			:email, :advisor_id, :first_enrolled_term, :expected_graduation,
@@ -53,5 +79,5 @@ class Api::V1::StudentsController < ApplicationController
 	# define the related entities to be included in student lookup and json render 
 	def student_associations
 		[:advisor, :cop_out, :coops, :audits]
-	end
+	end	
 end
