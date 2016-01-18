@@ -8,14 +8,6 @@ class Api::V1::CoopsController < ApplicationController
 		render json: {}, status: 200
 	end
 
-	def destroy
-		coop = Coop.find params[:id]
-		if coop.destroy!
-			render json: {}, status: 200
-		end
-		#TODO: handle failure case
-	end
-
 	private
 	def set_student
 		@student = Student.find(params[:student_id])

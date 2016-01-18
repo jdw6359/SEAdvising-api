@@ -18,8 +18,6 @@ Rails.application.routes.draw do
         resources :audits, only: [:create]
         resources :cop_outs, only: [:create]
       end
-
-      resources :coops, only: [:destroy]
     end
   end
 end
