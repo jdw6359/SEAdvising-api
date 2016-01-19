@@ -19,10 +19,10 @@ gem 'faker'
 gem 'spring'
 
 group :development, :test do
-	gem 'rspec-rails', '~> 2.0'
 	gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :test do
-  gem 'shoulda-matchers', '~> 2.6.0'
+	gem 'shoulda', '~> 3.5'
+  gem 'shoulda-matchers', '~> 2.0'
 end
