@@ -11,4 +11,9 @@ FactoryGirl.define do
 		factory :worker, class: 'Worker' do
 		end
 	end
+
+	factory :post do
+		association :user, factory: :advisor
+		message Faker::Hacker.say_something_smart
+	end
 end

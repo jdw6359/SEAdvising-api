@@ -9,6 +9,10 @@ class ActiveSupport::TestCase
   # fixtures :all
   include FactoryGirl::Syntax::Methods
 
-
   # Add more helper methods to be used by all tests here...
+  
+  #used in testing the routes (tests found in controllers/routes)
+  def url_base
+  	"api/v1/"
+  end
 end

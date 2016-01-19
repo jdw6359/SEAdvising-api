@@ -16,15 +16,13 @@ gem 'puma'
 gem 'json'
 gem 'jwt'
 gem 'faker'
+gem 'spring'
 
-# TODO figure out if 'spring' gem is necessary
-group :development do
-	gem 'spring'
+group :development, :test do
+	gem 'rspec-rails', '~> 2.0'
+	gem 'factory_girl_rails', '~> 4.0'
 end
 
-# Gems used only in test environment
 group :test do
-  gem 'shoulda', '~> 3.5'
-  gem 'shoulda-matchers', '~> 2.0'
-	gem 'factory_girl'
+  gem 'shoulda-matchers', '~> 2.6.0'
 end
