@@ -5,7 +5,7 @@ load 'db/seeds/workers.rb'
 load 'db/seeds/students.rb'
 
 #messages dependent on users (advisor / worker)
-load 'db/seeds/messages.rb'
+load 'db/seeds/posts.rb'
 
 #coop dependent on students
 load 'db/seeds/coops.rb'

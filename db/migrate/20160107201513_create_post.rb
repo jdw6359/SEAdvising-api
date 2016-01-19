@@ -1,6 +1,6 @@
-class CreateMessage < ActiveRecord::Migration
+class CreatePost < ActiveRecord::Migration
   def change
-    create_table :messages do |t|
+    create_table :posts do |t|
     	t.integer :user_id, index: true
     	t.string :message
     	t.timestamps
