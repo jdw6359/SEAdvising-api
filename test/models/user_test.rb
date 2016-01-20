@@ -18,10 +18,21 @@ class UserTest < ActiveSupport::TestCase
 			@user = build(:user)
 		end
 		
-		should 'generate a password reset token' do
+		should 'not have a password reset token when created' do
 			assert_nil(@user.password_reset_token)
-			@user.generate_password_reset_token!
-			assert_not_nil(@user.password_reset_token)
+		end
+
+		context '#generate_password_reset_token!' do
+			should 'update the user\'s password_reset_token' do
+				@user.generate_password_reset_token!
+				assert_not_nil(@user.password_reset_token)
+			end
+		end
+
+		context '#generate_auth_token' do
+			should 'invoke #encode on AuthToken' do
+				flunk 'fix this test'
+			end
 		end
 	end
 end

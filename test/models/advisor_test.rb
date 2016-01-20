@@ -7,6 +7,9 @@ class AdvisorTest < ActiveSupport::TestCase
 			@advisor = build(:advisor)
 		end
 
+		should have_many(:students)
+		should have_many(:audits)
+
 		should 'inherit from user' do
 			assert_kind_of(User, @advisor)
 		end
