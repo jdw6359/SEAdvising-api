@@ -10,7 +10,16 @@ class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
 
   URL_BASE = "api/v1/"
-  # Add more helper methods to be used by all tests here...
   
+
+  def bypass_authentication(controller)
+	@user = create(:user)
+	controller
+		.stubs(:authenticate_request)
+		.returns(:true)
+	controller
+		.stubs(:decoded_auth_token)
+		.returns({user_id: @user.id})
+  end
   #used in testing the routes (tests found in controllers/routes)
 end
