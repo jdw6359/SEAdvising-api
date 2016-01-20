@@ -1,7 +1,7 @@
 class Api::V1::PostsController < ApplicationController
 
 	def index
-		@posts = Post.includes(:user).all
+		@posts = Post.includes(:user).all.order(created_at: :desc)
 		render json: @posts, include: [:user]
 	end
 
@@ -13,6 +13,7 @@ class Api::V1::PostsController < ApplicationController
 
 	private
 	def post_params
-		params.require(:post).permit(:user_id, :message)
+		params.require(:post).permit(:message)
+			.merge(:user_id => @current_user.id)
 	end
 end

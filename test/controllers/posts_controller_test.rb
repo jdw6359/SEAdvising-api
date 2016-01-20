@@ -16,7 +16,7 @@ class Api::V1::PostsControllerTest < ActionController::TestCase
 
 		should 'create a post' do
 			assert_difference('Post.count', 1) do
-				post :create, post: {user_id: @user.id, message: 'test'}
+				post :create, post: {message: 'test'}
 			end
 			assert_response :success
 		end
