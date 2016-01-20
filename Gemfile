@@ -16,6 +16,7 @@ gem 'puma'
 gem 'json'
 gem 'jwt'
 gem 'faker'
+gem 'mocha'
 
 group :development, :test do
 	gem 'spring'

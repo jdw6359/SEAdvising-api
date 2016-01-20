@@ -31,7 +31,8 @@ class UserTest < ActiveSupport::TestCase
 
 		context '#generate_auth_token' do
 			should 'invoke #encode on AuthToken' do
-				flunk 'fix this test'
+				AuthToken.expects(:encode).with({user_id: @user.id})
+				@user.generate_auth_token
 			end
 		end
 	end
