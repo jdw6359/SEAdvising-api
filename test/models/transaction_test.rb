@@ -3,12 +3,7 @@ require 'test_helper'
 class TransactionTest < ActiveSupport::TestCase
 
 	context 'transactions' do
-		should 'test associations' do
-			flunk 'fix this test'
-		end
-
-		should 'test callbacks' do
-			flunk 'fix this test'
-		end
+		should belong_to(:student)
+		should belong_to(:loggable)
 	end
 end
