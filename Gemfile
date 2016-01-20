@@ -16,9 +16,9 @@ gem 'puma'
 gem 'json'
 gem 'jwt'
 gem 'faker'
-gem 'spring'
 
 group :development, :test do
+	gem 'spring'
 	gem 'factory_girl_rails', '~> 4.0'
 end
 
