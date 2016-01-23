@@ -51,6 +51,12 @@ class StudentRoutesTest < ActionController::TestCase
 					{controller: URL_BASE + 'cop_outs', action: 'create',
 					student_id: student_id})
 			end
+
+			should 'route to create a student\'s senior project' do
+				assert_routing({method: 'post', path: nested_url_base + 'senior_projects'},
+					{controller: URL_BASE + 'senior_projects', action: 'create',
+					student_id: student_id})
+			end
 		end
 	end
 end

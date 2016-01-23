@@ -5,7 +5,8 @@ class Api::V1::PostsControllerTest < ActionController::TestCase
 	context 'posts controller' do
 		
 		setup do
-			bypass_authentication(@controller)
+			@user = create(:user)
+			bypass_authentication(@user, @controller)
 		end
 
 		should 'get the index' do

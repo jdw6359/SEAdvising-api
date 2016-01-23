@@ -12,14 +12,13 @@ class ActiveSupport::TestCase
   URL_BASE = "api/v1/"
   
 
-  def bypass_authentication(controller)
-	@user = create(:user)
-	controller
-		.stubs(:authenticate_request)
-		.returns(:true)
-	controller
-		.stubs(:decoded_auth_token)
-		.returns({user_id: @user.id})
+  def bypass_authentication(user, controller)
+	  controller
+		  .stubs(:authenticate_request)
+		  .returns(:true)
+	  controller
+		  .stubs(:decoded_auth_token)
+		  .returns({user_id: user.id})
   end
   #used in testing the routes (tests found in controllers/routes)
 end

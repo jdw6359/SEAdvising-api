@@ -1,6 +1,7 @@
 class Student < ActiveRecord::Base
 	belongs_to :advisor
 	has_one :cop_out
+	has_one :senior_project
 	has_many :coops
 	has_many :audits
 
@@ -12,5 +13,4 @@ class Student < ActiveRecord::Base
 	def full_name
 		"#{self.first_name} #{self.last_name}"
 	end
-
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160107201513) do
+ActiveRecord::Schema.define(version: 20160122221603) do
 
   create_table "audits", force: :cascade do |t|
     t.integer  "student_id"
@@ -57,6 +57,23 @@ ActiveRecord::Schema.define(version: 20160107201513) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "senior_projects", force: :cascade do |t|
+    t.integer  "student_id"
+    t.string   "status"
+    t.string   "end_term"
+    t.string   "cert_term_projected"
+    t.string   "cert_term_certified"
+    t.string   "ceremony_term"
+    t.boolean  "grad_app_submitted"
+    t.datetime "grad_app_submitted_date"
+    t.boolean  "email1_sent"
+    t.boolean  "email2_sent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "senior_projects", ["student_id"], name: "index_senior_projects_on_student_id"
 
   create_table "students", force: :cascade do |t|
     t.integer  "advisor_id"
