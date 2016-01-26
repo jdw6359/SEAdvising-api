@@ -6,6 +6,7 @@ class Student < ActiveRecord::Base
 	has_many :audits
 
 	has_many :transactions
+	has_many :notes
 
 	validates_presence_of :email, :first_name, :last_name
 	validates_uniqueness_of :email
