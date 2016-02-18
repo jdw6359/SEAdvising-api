@@ -34,6 +34,8 @@ first_enrolled_terms = [1113, 1115, 1118, 1123, 1125, 1128]
 		first_enrolled_term: first_enrolled_term,
 		expected_graduation: expected_graduation,
 		cop_in: cop_in,
-		cop_in_effective_term: cop_in_effective_term 
+		cop_in_effective_term: cop_in_effective_term,
+		red_flag_label: boolean_values.sample,
+		event_attendee_label: boolean_values.sample
 	)
 }
