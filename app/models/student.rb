@@ -11,10 +11,6 @@ class Student < ActiveRecord::Base
 	validates_presence_of :email, :first_name, :last_name
 	validates_uniqueness_of :email
 
-	# Active Record scopes to assist with querying
-	scope :red_flags, -> { where(red_flag_label: true)}
-	scope :event_attendees, -> { where(event_attendee_label: true)} 
-
 	def full_name
 		"#{self.first_name} #{self.last_name}"
 	end

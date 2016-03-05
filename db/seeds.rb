@@ -8,6 +8,7 @@ load 'db/seeds/students.rb'
 load 'db/seeds/posts.rb'
 
 #dependent on students
+load 'db/seeds/labels.rb'
 load 'db/seeds/notes.rb'
 load 'db/seeds/coops.rb'
 load 'db/seeds/audits.rb'

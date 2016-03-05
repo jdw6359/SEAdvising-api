@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218135347) do
+ActiveRecord::Schema.define(version: 20160305212210) do
 
   create_table "audits", force: :cascade do |t|
     t.integer  "student_id"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 20160218135347) do
     t.string   "new_plan"
     t.string   "effective_term"
     t.string   "application_status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "labels", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -101,8 +109,6 @@ ActiveRecord::Schema.define(version: 20160218135347) do
     t.datetime "updated_at"
     t.boolean  "cop_in",                default: false
     t.string   "cop_in_effective_term"
-    t.boolean  "red_flag_label",        default: false,    null: false
-    t.boolean  "event_attendee_label",  default: false,    null: false
   end
 
   create_table "transactions", force: :cascade do |t|

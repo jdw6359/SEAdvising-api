@@ -29,7 +29,7 @@ class Api::V1::StudentsController < ApplicationController
 	end
 
 	def create
-		@student = Student.new(student_label_params)
+		@student = Student.new(student_params)
 		if @student.save
 			render json: @student, status: :created
 		else
@@ -82,8 +82,7 @@ class Api::V1::StudentsController < ApplicationController
 	def student_params
 		params.require(:student).permit(:first_name, :middle_name, :last_name,
 			:email, :advisor_id, :first_enrolled_term, :expected_graduation,
-			:status, :student_type, :com_sub_plan, :cop_in, :cop_in_effective_term,
-			:red_flag_label, :event_attendee_label)
+			:status, :student_type, :com_sub_plan, :cop_in, :cop_in_effective_term)
 	end
 
 	# define the related entities to be included in student lookup and json render 
