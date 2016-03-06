@@ -20,7 +20,12 @@ class Api::V1::LabelsController < ApplicationController
   end
 
   def update
-    binding.pry
+    label = Label.find(params[:id])
+    if label.update_attributes(label_params)
+      render json: label
+    else
+      render json: {errors: label.errors}, status: 422
+    end
   end
 
   private
