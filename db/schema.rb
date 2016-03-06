@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305212210) do
+ActiveRecord::Schema.define(version: 20160306201111) do
 
   create_table "audits", force: :cascade do |t|
     t.integer  "student_id"
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(version: 20160305212210) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "labels_students", id: false, force: :cascade do |t|
+    t.integer "label_id"
+    t.integer "student_id"
+  end
+
+  add_index "labels_students", ["label_id"], name: "index_labels_students_on_label_id"
+  add_index "labels_students", ["student_id"], name: "index_labels_students_on_student_id"
 
   create_table "notes", force: :cascade do |t|
     t.integer  "student_id"

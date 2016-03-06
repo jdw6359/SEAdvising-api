@@ -8,6 +8,8 @@ class Student < ActiveRecord::Base
 	has_many :transactions
 	has_many :notes
 
+	has_and_belongs_to_many :labels
+
 	validates_presence_of :email, :first_name, :last_name
 	validates_uniqueness_of :email
 
