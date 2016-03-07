@@ -11,7 +11,8 @@ gem 'devise'
 
 gem 'rack-cors', :require => 'rack/cors'
 gem 'pry'
-gem 'mysql2', '~> 0.3.18'
+
+# gem 'mysql2', '~> 0.3.18'
 gem 'puma'
 gem 'json'
 gem 'jwt'
