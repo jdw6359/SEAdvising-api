@@ -6,3 +6,5 @@ Advisor.create(first_name: "Carrie", last_name: "Deglans",
 	email: "cdtest@rit.edu", password: "password", password_confirmation: "password")
 Advisor.create(first_name: "Carrie", last_name: "Koneski",
 	email: "cktest@rit.edu", password: "password", password_confirmation: "password")
+Advisor.create(first_name: "Test", last_name: "Account",
+	email: "test@rit.edu", password: "password", password_confirmation: "password")
