@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       # resources scoped down to specific students
       get 'students/search' => 'students#search'
       resources :students, only: [:index, :show, :create, :update] do
+        resources :labels, only: [:create, :destroy]
         resources :transactions, only: [:index]
         resources :notes, only: [:index, :create]
         resources :coops, only: [:create]
