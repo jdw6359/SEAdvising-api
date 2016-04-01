@@ -15,8 +15,12 @@ Rails.application.routes.draw do
 
       # resources scoped down to specific students
       get 'students/search' => 'students#search'
+
+      # student - label configuration endpoints
+      get 'students/:student_id/labels' => 'students_labels#index'
+      post 'students/:student_id/labels/:id' => 'students_labels#create'
+      delete 'students/:student_id/labels/:id' => 'students_labels#destroy'
       resources :students, only: [:index, :show, :create, :update] do
-        resources :labels, only: [:create, :destroy]
         resources :transactions, only: [:index]
         resources :notes, only: [:index, :create]
         resources :coops, only: [:create]
