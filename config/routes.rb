@@ -20,12 +20,13 @@ Rails.application.routes.draw do
       get 'students/:student_id/labels' => 'students_labels#index'
       post 'students/:student_id/labels/:id' => 'students_labels#create'
       delete 'students/:student_id/labels/:id' => 'students_labels#destroy'
+
       resources :students, only: [:index, :show, :create, :update] do
         resources :transactions, only: [:index]
         resources :notes, only: [:index, :create]
         resources :coops, only: [:create]
         resources :audits, only: [:create]
-        resources :cop_outs, only: [:create]
+        resource :cop_outs, only: [:create, :update]
         resources :senior_projects, only: [:create]
       end
     end
