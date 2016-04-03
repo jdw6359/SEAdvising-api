@@ -82,11 +82,11 @@ class Api::V1::StudentsController < ApplicationController
     def student_params
         params.require(:student).permit(:first_name, :middle_name, :last_name,
             :email, :advisor_id, :first_enrolled_term, :expected_graduation,
-            :status, :student_type, :com_sub_plan, :cop_in, :cop_in_effective_term)
+            :status, :student_type, :com_sub_plan)
     end
 
     # define the related entities to be included in student lookup and json render 
     def student_associations
-        [:advisor, :cop_out, :coops, :audits, :senior_project, :labels]
+        [:advisor, :cop_in, :cop_out, :coops, :audits, :senior_project, :labels]
     end 
 end

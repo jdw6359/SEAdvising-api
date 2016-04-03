@@ -27,6 +27,7 @@ Rails.application.routes.draw do
         resources :coops, only: [:create]
         resources :audits, only: [:create]
         resource :cop_outs, only: [:create, :update]
+        resource :cop_ins, only: [:create, :update]
         resources :senior_projects, only: [:create]
       end
     end
