@@ -21,6 +21,9 @@ Rails.application.routes.draw do
       post 'students/:student_id/labels/:id' => 'students_labels#create'
       delete 'students/:student_id/labels/:id' => 'students_labels#destroy'
 
+      # enable access to these resources outside the context of a student
+      resources :coops, only: [:show, :update]
+
       resources :students, only: [:index, :show, :create, :update] do
         resources :transactions, only: [:index]
         resources :notes, only: [:index, :create]
