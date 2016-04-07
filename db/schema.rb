@@ -104,8 +104,6 @@ ActiveRecord::Schema.define(version: 20160404003536) do
     t.string   "ceremony_term"
     t.boolean  "grad_app_submitted"
     t.datetime "grad_app_submitted_date"
-    t.boolean  "email1_sent"
-    t.boolean  "email2_sent"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

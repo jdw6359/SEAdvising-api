@@ -31,7 +31,7 @@ Rails.application.routes.draw do
         resources :audits, only: [:create]
         resource :cop_outs, only: [:create, :update]
         resource :cop_ins, only: [:create, :update]
-        resources :senior_projects, only: [:create]
+        resource :senior_projects, only: [:create, :update]
       end
     end
   end
