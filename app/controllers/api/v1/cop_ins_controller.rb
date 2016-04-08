@@ -4,6 +4,7 @@ class Api::V1::CopInsController < ApplicationController
 
   def create
     @student.cop_in = @student.create_cop_in(cop_in_params)
+    render json: { status: 200 }
   end
 
   def update

@@ -3,8 +3,8 @@ class Api::V1::SeniorProjectsController < ActionController::Base
   before_action :set_student, only: [:create, :update]
 
   def create
-    binding.pry
     @student.senior_project = @student.create_senior_project(senior_project_params)
+    render json: { status: 200 }
   end
 
   def update
@@ -18,7 +18,7 @@ class Api::V1::SeniorProjectsController < ActionController::Base
   private
   def senior_project_params
     params.require(:senior_project).permit(:status, :end_term, :cert_term_projected,
-      :cert_term_certified, :ceremony_term, :grad_app_submitted, :grad_app_submitted_date)
+      :cert_term_certified, :ceremony_term, :grad_app_submitted_date)
   end
 
   def set_student

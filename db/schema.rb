@@ -102,7 +102,6 @@ ActiveRecord::Schema.define(version: 20160404003536) do
     t.string   "cert_term_projected"
     t.string   "cert_term_certified"
     t.string   "ceremony_term"
-    t.boolean  "grad_app_submitted"
     t.datetime "grad_app_submitted_date"
     t.datetime "created_at"
     t.datetime "updated_at"

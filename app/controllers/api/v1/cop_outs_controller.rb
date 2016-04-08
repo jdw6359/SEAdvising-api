@@ -4,6 +4,7 @@ class Api::V1::CopOutsController < ApplicationController
 
   def create
     @student.cop_out = @student.create_cop_out(cop_out_params)
+    render json: { status: 200 }
   end
 
   def update
