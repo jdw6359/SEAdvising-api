@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
 	belongs_to :advisor
+	has_one :program_detail
 	has_one :cop_out
 	has_one :cop_in
 	has_one :senior_project

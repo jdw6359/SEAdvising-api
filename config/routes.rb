@@ -32,6 +32,7 @@ Rails.application.routes.draw do
         resource :cop_outs, only: [:create, :update]
         resource :cop_ins, only: [:create, :update]
         resource :senior_projects, only: [:create, :update]
+        resource :program_details, only: [:create, :update]
       end
     end
   end
