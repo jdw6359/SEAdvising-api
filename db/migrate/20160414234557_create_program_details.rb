@@ -7,7 +7,6 @@ class CreateProgramDetails < ActiveRecord::Migration
       t.datetime :application_domain_submitted_date
       t.string :minor
       t.datetime :minor_submitted_date
-      t.boolean :honors
 
       t.timestamps
     end

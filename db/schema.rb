@@ -102,7 +102,6 @@ ActiveRecord::Schema.define(version: 20160414234557) do
     t.datetime "application_domain_submitted_date"
     t.string   "minor"
     t.datetime "minor_submitted_date"
-    t.boolean  "honors"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
